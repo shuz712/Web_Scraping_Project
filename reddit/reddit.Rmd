@@ -359,7 +359,7 @@ ggplot(db_interests, aes(reorder(x=interests,freq), y=freq)) +
   scale_fill_manual(values=colours1)+
   geom_text(data=db_interests, hjust=-0.5,size=1.5, aes(x=interests,y=freq,label=percentage))
 ```
-<br />
+
 #### 5.People who like statistics also like:
 ```{r}
 st <- reddit2 %>% group_by(subreddit) %>% filter(subreddit == "statistics")
