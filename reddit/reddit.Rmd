@@ -248,7 +248,8 @@ ggplot(data=vote_time,aes(x=hour,y=topic_vote,fill=hour)) +
 
 ### C.Interests
 #### 1.People who like Machine Learning also like:
-<br />
+
+
 ```{r}
 machinelearning <- reddit2 %>% group_by(subreddit) %>% filter(subreddit == "MachineLearning")
 ```
@@ -312,7 +313,7 @@ ggplot(sc_interests, aes(reorder(x=interests,freq), y=freq)) +
 ```{r}
 frugal <- reddit2 %>% group_by(subreddit) %>% filter(subreddit == "Frugal")
 ```
-Top 15 most favourite subreddit for "frugal" redditors:<br />
+Top 15 most favourite subreddit for "frugal" redditors:
 ```{r}
 fg_interests <- frugal %>% group_by(interests) %>% summarise('freq' = n()) %>% mutate('percentage'=round(freq/sum(freq),4)*100) %>%
   arrange(desc(freq)) %>%
@@ -388,7 +389,7 @@ unique(reddit$subreddit)
 ```
 
 
-### D.Submission Topics <br />
+### D.Submission Topics
 #### Word Cloud1 
 
 Select top 100 hot topics by their topic_vote in "MachineLearning" subreddit.
